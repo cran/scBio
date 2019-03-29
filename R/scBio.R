@@ -331,14 +331,29 @@ CPMMain = function(refference,refferenceNames, Y, chosenCellList, chosenCellNeig
   #### Cell type prediction ####
   if(quantifyTypes){
     print("Calculating cell type quantities")
+    allClusterMeansMatrixForCellTypes = allClusterMeansMatrix
+    if(typeTransformation){
+      allClusterMeansMatrixForCellTypes = t(apply(t(allClusterMeansMatrixForCellTypes),2,function(x){
+        x-min(x)
+      }))
+    }
+
+    # cellTypeRes = do.call(cbind,lapply(unique(refferenceNames),function(currCluster){
+    #   apply(allClusterMeansMatrixForCellTypes,1,function(x){
+    #     #ks.test(x,x[currCluster==refferenceNames],alternative = "less")$p.value
+    #     df = as.data.frame(cbind(sample(x,length(which(currCluster==refferenceNames))),x[currCluster==refferenceNames]))
+    #     lm(V2~V1+0, data = df)$coefficients[1]
+    #   })
+    # }))
+
     cellTypeRes = do.call(cbind,lapply(unique(refferenceNames),function(currCluster){
-      rowMeans(allClusterMeansMatrix[,currCluster==refferenceNames])
+      rowMeans(allClusterMeansMatrixForCellTypes[,currCluster==refferenceNames])
     }))
     colnames(cellTypeRes) = unique(refferenceNames)
 
     if(typeTransformation){
       cellTypeRes = t(apply(t(cellTypeRes),2,function(x){
-        x = (x-min(x))
+        #x = (x-min(x))
         x/sum(x)
       })
       )
