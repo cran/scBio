@@ -1,12 +1,12 @@
-6736ef9fa9e4c88b67e735aebdef275f *DESCRIPTION
+84eafa6a17329f4c9609e00bc6d2130f *DESCRIPTION
 db145741783207b24a533c64dac574a9 *NAMESPACE
-504af4c4220e39ec48d20042ac05b37f *R/scBio.R
+1da9264afe4dd7e24904d3c026ca4a71 *R/scBio.R
 f7a8c36644f3864097e2e68bd2c81269 *data/BulkFlu.rda
 6920ed4a966ac46acb7d1e838d904afa *data/SCCellSpace.rda
 df99aadcef5a5a5176bd5f7fd1d42ba4 *data/SCFlu.rda
 e0a67ea8cd52f7e565a5515a14ca3bf9 *data/SCLabels.rda
 55351dddeeff44a70f234a5c745cccdb *man/BulkFlu.Rd
-7e8b99c36620de123ae49921ae797f1f *man/CPM.Rd
+fa33ac5d04155c152516d55f72cf1ed1 *man/CPM.Rd
 bfe82a01e96cada8fb4b64cb4b98d770 *man/SCCellSpace.Rd
 5b32f0d7cff90a461d82185739c351e4 *man/SCFlu.Rd
 1f65ea616691e6ac8999882e7a5c6983 *man/SCLabels.Rd
