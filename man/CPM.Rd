@@ -4,9 +4,19 @@
 \alias{CPM}
 \title{The Cellular Population Mapping (CPM) algorithm.}
 \usage{
-CPM(SCData, SCLabels, BulkData, cellSpace, no_cores = NULL,
-  neighborhoodSize = 10, modelSize = 50, minSelection = 5,
-  quantifyTypes = F, typeTransformation = F, calculateCI = F)
+CPM(
+  SCData,
+  SCLabels,
+  BulkData,
+  cellSpace,
+  no_cores = NULL,
+  neighborhoodSize = 10,
+  modelSize = 50,
+  minSelection = 5,
+  quantifyTypes = F,
+  typeTransformation = F,
+  calculateCI = F
+)
 }
 \arguments{
 \item{SCData}{A matrix containing the single-cell RNA-seq data. Each row corresponds to a certain gene and each column to a certain cell. Importantly, CPM relies on many iterative processes and therefore might take a long running time. For extremely large single cell datasets, we suggest to use only a portion of the data, using random sampling of the cells.}
